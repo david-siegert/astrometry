@@ -1,0 +1,77 @@
+﻿<Window x:Class="Astrometrie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:properties="clr-namespace:Astrometrie.Properties"
+        mc:Ignorable="d"
+        PreviewKeyDown="Window_PreviewKeyDown"
+        Title="Astrometry" 
+        Width="444"
+        SizeToContent="WidthAndHeight"
+        Background="Black">
+    <Grid Margin="20">
+        <DockPanel LastChildFill="True" DataContext="{x:Static properties:Settings.Default}">
+            <!--<Image 
+                Margin="0,0,0,16"
+                Width="300"
+                Height="300"
+                DockPanel.Dock="Top" Source="/Resources/blue_skies_on_pluto-final-2.png"/>-->
+            <StackPanel Height="26" DockPanel.Dock="Top" Orientation="Horizontal">
+                <TextBox 
+                    Width="300" 
+                    Margin="0,0,8,0" 
+                    Height="24" ToolTip="Enter folder path." 
+                    Text="{Binding Path=folderPath, UpdateSourceTrigger=PropertyChanged}"/>
+                <Button 
+                    Height="24" 
+                    Width="87" 
+                    Content="Browse..." 
+                    Click="Button_Click_Browse"/>
+            </StackPanel>
+            <TextBlock
+                Margin="0,8,0,8"
+                DockPanel.Dock="Top"
+                x:Name="messageBlock"
+                Foreground="White"  
+                Text="{Binding Path=message, UpdateSourceTrigger=PropertyChanged}"/>
+            <StackPanel DockPanel.Dock="Left" Margin="0,8,0,8">
+                <StackPanel 
+                    x:Name="resultPanel" 
+                    Width="170" 
+                    Height="80"
+                    HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0" HorizontalAlignment="Right">
+                        <TextBlock Foreground="White" Text="Ra:" Margin="0,0,40,0"/>
+                        <TextBox 
+                            x:Name="ra"
+                            Width="110" 
+                            Text="{Binding Path=Ra, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0" HorizontalAlignment="Right">
+                        <TextBlock Foreground="White" Text="Dec:"  Margin="0,0,33,0"/>
+                        <TextBox 
+                            x:Name="dec"
+                            Width="110" 
+                            Text="{Binding Path=Dec, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0" HorizontalAlignment="Right">
+                        <TextBlock Foreground="White" Text="Radius:" Margin="0,0,18,0"/>
+                        <TextBox
+                            x:Name="radius"
+                            Width="110"
+                            Text="{Binding Path=Radius, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel
+                Margin="0,0,0,9"
+                Height="24" 
+                Orientation="Horizontal" 
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom">
+                <Button x:Name="calculateButton" Click="Button_Click_Calculate" Height="24" Width="87" Content="Calculate"/>
+            </StackPanel>
+        </DockPanel>
+    </Grid>
+</Window>

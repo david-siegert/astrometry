@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Astrometrie.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="folderPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">E:\expa19</Value>
+    </Setting>
+    <Setting Name="message" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Press Calculate to send last image to nova.astrometry.net</Value>
+    </Setting>
+    <Setting Name="Ra" Type="System.String" Scope="User">
+      <Value Profile="(Default)">00h 00m 00.000s</Value>
+    </Setting>
+    <Setting Name="Dec" Type="System.String" Scope="User">
+      <Value Profile="(Default)">+00° 00' 00.000"</Value>
+    </Setting>
+    <Setting Name="Radius" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0.0000000 deg</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
