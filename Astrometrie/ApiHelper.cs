@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,6 @@ namespace Astrometrie
 {
     static class ApiHelper
     {
-        public static string ApiKey = "vengmjcgobqwnoci";
         public static HttpClient ApiClient { get; set; }
         public static string SessionKey { get; set; }
         public static int SubId { get; set; }
@@ -63,12 +63,15 @@ namespace Astrometrie
         }
 
 
-
         private static async Task<string> Login()
         {
             string url = $"login";
 
-            string json = "{\"apikey\": \""+ ApiKey +"\"}";
+            //string apikey = ConfigurationManager.AppSettings["apikey"];
+
+            string apikey = ConfigurationManager.AppSettings.Get("apikey");
+
+            string json = "{\"apikey\": \""+ apikey +"\"}";
 
             var requestJson = new Dictionary<string, string>
             {
