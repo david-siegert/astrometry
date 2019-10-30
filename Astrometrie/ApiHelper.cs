@@ -51,13 +51,12 @@ namespace Astrometrie
 
             SaveSession(session);
 
-            if (ApiHelper.SessionKey != null)
+            if (SessionKey != null)
             {
                 return true;
             }
             else
             {
-                Console.WriteLine("Opening session unsuccesfull");
                 return false;
             }
         }
