@@ -31,23 +31,20 @@ namespace Astrometrie
 
 
 
-
         private void Button_Click_Browse(object sender, RoutedEventArgs e)
         {
-            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            FolderBrowserDialog folderDialog = new FolderBrowserDialog();
 
-            fbd.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            folderDialog.SelectedPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
-            fbd.ShowNewFolderButton = false;
+            folderDialog.ShowNewFolderButton = false;
 
-            if (!(fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK))
+            if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                return;
+                Properties.Settings.Default.folderPath = folderDialog.SelectedPath;
+                Properties.Settings.Default.Save();
             }
 
-            Properties.Settings.Default.folderPath = fbd.SelectedPath;
-
-            Properties.Settings.Default.Save();
         }
 
 
