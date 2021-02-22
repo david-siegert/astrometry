@@ -13,3 +13,6 @@ A desktop tool using nova.astrometry.net API to process a sky pictures (JPEG, GI
  3 - Check status of the job periodically ✅</br>
  4 - Show results in UI ✅</br>
  5 - Ask for and show the rest of the available information. 🔲</br>
+
+# Supported OS
+ - Windows 10
